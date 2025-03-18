@@ -9,8 +9,8 @@ public class NumberParser {
 
     public static boolean isArabic(String str) {
         try {
-            int num = Integer.parseInt(str);
-            return num >= 1 && num <= 10;
+            int number = Integer.parseInt(str);
+            return number >= 1 && number <= 10;
         } catch (NumberFormatException e) {
             return false;
         }

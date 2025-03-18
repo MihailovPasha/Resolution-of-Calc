@@ -1,7 +1,7 @@
 /**
  * Класс отвечает за перевод арабских чисел в римские и наоборот;
  */
-public class RomanNumeral {
+public class Converter {
     private static final int[] values = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
     private static final String[] symbols = {"X", "IX","VIII", "VII", "VI", "V", "IV","III", "II", "I"};
 
@@ -11,7 +11,7 @@ public class RomanNumeral {
      * @param symbol String, римское число;
      * @return Возвращает целочисленное значение арабской системы чисел;
      */
-    public static int getValue(String symbol) {
+    public static int toArabic(String symbol) {
         return switch (symbol) {
             case "X" -> 10;
             case "IX" -> 9;

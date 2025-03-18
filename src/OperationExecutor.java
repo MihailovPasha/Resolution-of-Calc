@@ -2,19 +2,19 @@
  * Класс выполняет арифметические операции.
  */
 public class OperationExecutor {
-    public static int execute(int num1, String operation, int num2){
+    public static int execute(int firstNumber, String operation, int secondNumber){
         switch (operation) {
             case "+":
-                return num1 + num2;
+                return firstNumber + secondNumber;
             case "-":
-                return num1 - num2;
+                return firstNumber - secondNumber;
             case "*":
-                return num1 * num2;
+                return firstNumber * secondNumber;
             case "/":
-                if (num2 == 0) {
+                if (secondNumber == 0) {
                     throw new ArithmeticException("Деление на ноль.");
                 }
-                return num1 / num2;
+                return firstNumber / secondNumber;
             default:
                 throw new IllegalArgumentException("Неверный оператор: " + operation);
         }

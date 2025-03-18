@@ -13,31 +13,29 @@ public class CalculatorService {
         String secondNumber = parts[2];
 
         boolean isRoman = false;
-        int num1;
-        int num2;
 
-        num1 = NumberParser.parse(firstNumber);
-        num2 = NumberParser.parse(secondNumber);
+        int resultOfParseOfFirstNumber = NumberParser.parse(firstNumber);
+        int resultOfParseOfSecondNumber = NumberParser.parse(secondNumber);
 
-        if (num1 == -1 || num2 == -1)
+        if (resultOfParseOfFirstNumber == -1 || resultOfParseOfSecondNumber == -1)
         {
             try {
-                num1 = RomanToArabConverter.convertToArab(firstNumber);
-                num2 = RomanToArabConverter.convertToArab(secondNumber);
+                resultOfParseOfFirstNumber = Converter.toArabic(firstNumber);
+                resultOfParseOfSecondNumber = Converter.toArabic(secondNumber);
                 isRoman = true;
             } catch (IllegalArgumentException ex) {
                 throw new IllegalArgumentException("Неверный формат чисел: должны быть арабские или римские (от I до X).");
             }
         }
 
-        FormatExpression.checkingExpression(parts,isRoman,num1,num2);
-        int result = OperationExecutor.execute(num1,operation,num2);
+        FormatExpression.checkingExpression(parts,isRoman,resultOfParseOfFirstNumber,resultOfParseOfSecondNumber);
+        int result = OperationExecutor.execute(resultOfParseOfFirstNumber,operation,resultOfParseOfSecondNumber);
 
         if (isRoman) {
             if (result < 1) {
                 throw new ArithmeticException("Результат работы с римскими числами не может быть меньше единицы.");
             }
-            return ArabToRomanConverter.convertToRoman(result);
+            return Converter.toRoman(result);
         } else {
             return String.valueOf(result);
         }
