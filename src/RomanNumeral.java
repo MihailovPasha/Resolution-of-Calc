@@ -1,9 +1,9 @@
 /**
  * Класс отвечает за перевод арабских чисел в римские и наоборот;
  */
-public class Roma {
-    private static int[] values = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    private static String[] symbols = {"X", "IX","VIII", "VII", "VI", "V", "IV","III", "II", "I"};
+public class RomanNumeral {
+    private static final int[] values = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    private static final String[] symbols = {"X", "IX","VIII", "VII", "VI", "V", "IV","III", "II", "I"};
 
     /**
      * Метод переводит введённое римское значение к соответсвующему арабскому значению;

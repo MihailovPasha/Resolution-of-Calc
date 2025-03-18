@@ -7,7 +7,7 @@ public class Main {
         String input = s.nextLine();
 
         try {
-            String result = Calc.calс(input);
+            String result = CalculatorService.calculate(input);
             System.out.println("Результат: " + result);
         } catch (Exception e) {
             System.out.println("Ошибка: " + e.getMessage());
