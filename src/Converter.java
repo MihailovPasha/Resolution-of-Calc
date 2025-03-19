@@ -3,7 +3,7 @@
  */
 public class Converter {
     private static final int[] values = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    private static final String[] symbols = {"X", "IX","VIII", "VII", "VI", "V", "IV","III", "II", "I"};
+    private static final String[] symbols = {"X", "IX", "VIII", "VII", "VI", "V", "IV", "III", "II", "I"};
 
     /**
      * Метод переводит введённое римское значение к соответсвующему арабскому значению;
@@ -29,6 +29,7 @@ public class Converter {
 
     /**
      * Метод переводит арабские числа в римские
+     *
      * @param num int, принимает в качестве входящих параметров целочисленные значения;
      * @return Возвращает строковое значение римской системы чисел;
      */

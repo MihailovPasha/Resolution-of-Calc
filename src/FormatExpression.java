@@ -2,7 +2,7 @@
  * Класс содержит методы для проверки формата входного выражения.
  */
 public class FormatExpression {
-    public static void checkingExpression (String[] parts, boolean isRoman, int firstNumber, int secondNumber){
+    public static void checkExpression(String[] parts, boolean isRoman, int firstNumber, int secondNumber) {
         String operation = parts[1];
         if (!operation.equals("+") && !operation.equals("-") && !operation.equals("*") && !operation.equals("/")) {
             throw new IllegalArgumentException("Неверный оператор. Допустимые операторы: +, -, *, /");
@@ -21,9 +21,10 @@ public class FormatExpression {
 
     /**
      * Метод проверяет длину выражения до выполнения остальных условий
+     *
      * @param parts String, значения, введённые пользователем
      */
-    public static void preCheckingExpression (String[] parts){
+    public static void checkInputLength(String[] parts) {
         if (parts.length != 3) {
             throw new IllegalArgumentException("Неправильный формат задания");
         }

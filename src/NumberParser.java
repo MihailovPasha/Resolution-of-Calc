@@ -1,18 +1,23 @@
 public class NumberParser {
-    public static int parse(String number) {
+
+    private static Integer tryParse(String str) {
         try {
-            return Integer.parseInt(number);
+            return Integer.parseInt(str);
         } catch (NumberFormatException e) {
-            return -1;
+            return null;
         }
     }
 
-    public static boolean isArabic(String str) {
-        try {
-            int number = Integer.parseInt(str);
-            return number >= 1 && number <= 10;
-        } catch (NumberFormatException e) {
-            return false;
+    public static int parse(String number) {
+        Integer parsedNumber = tryParse(number);
+        if (parsedNumber == null) {
+            return -1;
         }
+        return parsedNumber;
+    }
+
+    public static boolean isArabic(String str) {
+        Integer parsedNumber = tryParse(str);
+        return parsedNumber != null && parsedNumber >= 1 && parsedNumber <= 10;
     }
 }

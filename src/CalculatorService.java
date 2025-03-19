@@ -6,7 +6,7 @@ public class CalculatorService {
     public static String calculate(String args) {
         String[] parts = args.split(" ");
 
-        FormatExpression.preCheckingExpression(parts);
+        FormatExpression.checkInputLength(parts);
 
         String firstNumber = parts[0];
         String operation = parts[1];
@@ -17,8 +17,7 @@ public class CalculatorService {
         int resultOfParseOfFirstNumber = NumberParser.parse(firstNumber);
         int resultOfParseOfSecondNumber = NumberParser.parse(secondNumber);
 
-        if (resultOfParseOfFirstNumber == -1 || resultOfParseOfSecondNumber == -1)
-        {
+        if (resultOfParseOfFirstNumber == -1 || resultOfParseOfSecondNumber == -1) {
             try {
                 resultOfParseOfFirstNumber = Converter.toArabic(firstNumber);
                 resultOfParseOfSecondNumber = Converter.toArabic(secondNumber);
@@ -28,8 +27,8 @@ public class CalculatorService {
             }
         }
 
-        FormatExpression.checkingExpression(parts,isRoman,resultOfParseOfFirstNumber,resultOfParseOfSecondNumber);
-        int result = OperationExecutor.execute(resultOfParseOfFirstNumber,operation,resultOfParseOfSecondNumber);
+        FormatExpression.checkExpression(parts, isRoman, resultOfParseOfFirstNumber, resultOfParseOfSecondNumber);
+        int result = OperationExecutor.execute(resultOfParseOfFirstNumber, operation, resultOfParseOfSecondNumber);
 
         if (isRoman) {
             if (result < 1) {

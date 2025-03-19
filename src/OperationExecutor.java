@@ -2,7 +2,7 @@
  * Класс выполняет арифметические операции.
  */
 public class OperationExecutor {
-    public static int execute(int firstNumber, String operation, int secondNumber){
+    public static int execute(int firstNumber, String operation, int secondNumber) {
         switch (operation) {
             case "+":
                 return firstNumber + secondNumber;
